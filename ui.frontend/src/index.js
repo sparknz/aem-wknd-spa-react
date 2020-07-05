@@ -28,10 +28,9 @@ import { render } from 'react-dom';
 import { Router } from 'react-router-dom';
 import App from './App';
 import './components/import-components';
-import './index.css';
 
 document.addEventListener('DOMContentLoaded', () => {
-  ModelManager.initialize().then(pageModel => {
+  ModelManager.initialize().then((pageModel) => {
     const history = createBrowserHistory();
     render(
       <Router history={history}>
@@ -44,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
           locationPathname={window.location.pathname}
         />
       </Router>,
-      document.getElementById('spa-root')
+      document.getElementById('spa-root'),
     );
   });
 });
