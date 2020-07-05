@@ -1,0 +1,69 @@
+{
+  "templateName": "spa-app-template",
+  "designPath": "/libs/settings/wcm/designs/default",
+  "language": "en",
+  "title": "en",
+  "cssClassNames": "spa page basicpage",
+  ":type": "wknd-spa-react/components/spa",
+  ":items": {
+    "root": {
+      "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+      "columnClassNames": {},
+      "columnCount": 12,
+      ":items": {},
+      ":itemsOrder": [],
+      ":type": "wknd-spa-react/components/container"
+    }
+  },
+  ":itemsOrder": ["root"],
+  ":hierarchyType": "page",
+  ":path": "/content/wknd-spa-react/nz/en",
+  ":children": {
+    "/content/wknd-spa-react/nz/en/home": {
+      "lastModifiedDate": 1593910257830,
+      "templateName": "spa-page-template",
+      "designPath": "/libs/settings/wcm/designs/default",
+      "language": "en",
+      "title": "WKND SPA Reat Home Page",
+      "cssClassNames": "spa page basicpage",
+      ":type": "wknd-spa-react/components/page",
+      ":items": {
+        "root": {
+          "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+          "columnClassNames": {
+            "responsivegrid": "aem-GridColumn aem-GridColumn--default--12"
+          },
+          "columnCount": 12,
+          ":items": {
+            "responsivegrid": {
+              "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+              "columnClassNames": {
+                "text": "aem-GridColumn aem-GridColumn--default--12"
+              },
+              "columnCount": 12,
+              ":items": {
+                "text": {
+                  "text": "<p>Hello World!!!</p>",
+                  "richText": true,
+                  ":type": "wknd-spa-react/components/text"
+                },
+                "text_1": {
+                  "text": "<p>Hello World!</p>",
+                  "richText": true,
+                  ":type": "wknd-spa-react/components/text"
+                }
+              },
+              ":itemsOrder": ["text", "text_1"],
+              ":type": "wcm/foundation/components/responsivegrid"
+            }
+          },
+          ":itemsOrder": ["responsivegrid"],
+          ":type": "wcm/foundation/components/responsivegrid"
+        }
+      },
+      ":itemsOrder": ["root"],
+      ":hierarchyType": "page",
+      ":path": "/content/wknd-spa-react/nz/en/home"
+    }
+  }
+}
