@@ -6,12 +6,12 @@ This is a project template for AEM-based applications. It is intended as a best-
 
 The main parts of the template are:
 
-* core: Java bundle containing all core functionality like OSGi services, listeners or schedulers, as well as component-related Java code such as servlets or request filters.
-* ui.apps: contains the /apps (and /etc) parts of the project, ie JS&CSS clientlibs, components, templates, runmode specific configs as well as Hobbes-tests
-* ui.content: contains sample content using the components from the ui.apps
-* ui.tests: Java bundle containing JUnit tests that are executed server-side. This bundle is not to be deployed onto production.
-* ui.launcher: contains glue code that deploys the ui.tests bundle (and dependent bundles) to the server and triggers the remote JUnit execution
-* ui.frontend: an optional dedicated front-end build mechanism (Angular, React or general Webpack project)
+- core: Java bundle containing all core functionality like OSGi services, listeners or schedulers, as well as component-related Java code such as servlets or request filters.
+- ui.apps: contains the /apps (and /etc) parts of the project, ie JS&CSS clientlibs, components, templates, runmode specific configs as well as Hobbes-tests
+- ui.content: contains sample content using the components from the ui.apps
+- ui.tests: Java bundle containing JUnit tests that are executed server-side. This bundle is not to be deployed onto production.
+- ui.launcher: contains glue code that deploys the ui.tests bundle (and dependent bundles) to the server and triggers the remote JUnit execution
+- ui.frontend: an optional dedicated front-end build mechanism (Angular, React or general Webpack project)
 
 ## How to build
 
@@ -39,21 +39,21 @@ Or to deploy only the bundle to the author, run
 
 There are three levels of testing contained in the project:
 
-* unit test in core: this show-cases classic unit testing of the code contained in the bundle. To test, execute:
+- unit test in core: this show-cases classic unit testing of the code contained in the bundle. To test, execute:
 
-    mvn clean test
+  mvn clean test
 
-* server-side integration tests: this allows to run unit-like tests in the AEM-environment, ie on the AEM server. To test, execute:
+- server-side integration tests: this allows to run unit-like tests in the AEM-environment, ie on the AEM server. To test, execute:
 
-    mvn clean verify -PintegrationTests
+  mvn clean verify -PintegrationTests
 
-* client-side Hobbes.js tests: JavaScript-based browser-side tests that verify browser-side behavior. To test:
+- client-side Hobbes.js tests: JavaScript-based browser-side tests that verify browser-side behavior. To test:
 
-    in the browser, open the page in 'Developer mode', open the left panel and switch to the 'Tests' tab and find the generated 'MyName Tests' and run them.
+  in the browser, open the page in 'Developer mode', open the left panel and switch to the 'Tests' tab and find the generated 'MyName Tests' and run them.
 
 ## ClientLibs
 
-The frontend module is made available using an [AEM ClientLib](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/clientlibs.html). When executing the NPM build script, the app is built and the [`aem-clientlib-generator`](https://github.com/wcm-io-frontend/aem-clientlib-generator) package takes the resulting build output and transforms it into such a ClientLib.
+The frontend module is made available using an [AEM ClientLib](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/clientlibs.html). When executing the yarn build script, the app is built and the [`aem-clientlib-generator`](https://github.com/wcm-io-frontend/aem-clientlib-generator) package takes the resulting build output and transforms it into such a ClientLib.
 
 A ClientLib will consist of the following files and directories:
 

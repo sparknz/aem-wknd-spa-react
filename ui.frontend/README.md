@@ -8,11 +8,11 @@ This application is built to consume the AEM model of a site. It will automatica
 
 In the project directory, you can run the following commands:
 
-### `npm start`
+### `yarn start`
 
 Runs the app in development mode by proxying the JSON model from a local AEM instance running at http://localhost:4502. This assumes that the entire project has been deployed to AEM at least once (`mvn clean install -PautoInstallPackage` **in the project root**).
 
-After running `npm start` **in the `ui.frontend` directory**, your app will be automatically opened in your browser (at path http://localhost:3000/content/wknd-spa-react/nz/en/home.html). If you make edits, the page will reload.
+After running `yarn start` **in the `ui.frontend` directory**, your app will be automatically opened in your browser (at path http://localhost:3000/content/wknd-spa-react/nz/en/home.html). If you make edits, the page will reload.
 
 If you are getting errors related to CORS, you might want to configure AEM as follows:
 
@@ -23,11 +23,11 @@ If you are getting errors related to CORS, you might want to configure AEM as fo
    - Supported Headers: Authorization
    - Allowed Methods: OPTIONS
 
-### `npm test`
+### `yarn test`
 
 Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `yarn build`
 
 Builds the app for production to the `build` folder. It bundles React in production mode and optimizes the build for the best performance. See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 

@@ -115,19 +115,19 @@
                     <version>1.7.6</version>
                     <configuration>
                         <nodeVersion>v12.13.1</nodeVersion>
-                        <npmVersion>6.12.1</npmVersion>
+                        <yarnVersion>v1.12.3</yarnVersion>
                     </configuration>
                     <executions>
                         <execution>
-                            <id>install node and npm</id>
+                            <id>install node and yarn</id>
                             <goals>
-                                <goal>install-node-and-npm</goal>
+                                <goal>install-node-and-yarn</goal>
                             </goals>
                         </execution>
                         <execution>
-                            <id>npm install</id>
+                            <id>yarn install</id>
                             <goals>
-                                <goal>npm</goal>
+                                <goal>yarn</goal>
                             </goals>
                         </execution>
                     </executions>
