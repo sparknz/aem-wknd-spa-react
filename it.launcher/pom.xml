@@ -14,7 +14,8 @@
  |  See the License for the specific language governing permissions and
  |  limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -29,8 +30,8 @@
     <!-- ====================================================================== -->
     <artifactId>wknd-spa-react.it.launcher</artifactId>
     <packaging>jar</packaging>
-    <name>WKND SPA Reat - Integration Tests Launcher</name>
-    <description>Integration Tests Launcher for WKND SPA Reat</description>
+    <name>WKND SPA React - Integration Tests Launcher</name>
+    <description>Integration Tests Launcher for WKND SPA React</description>
 
     <!-- <scm>
         <connection></connection>
@@ -241,12 +242,12 @@
                             </systemPropertyVariables>
                         </configuration>
                         <dependencies>
-                          <!-- Specify provider to process JUnit4 tests -->
-                          <dependency>
-                            <groupId>org.apache.maven.surefire</groupId>
-                            <artifactId>surefire-junit47</artifactId>
-                            <version>2.22.2</version>
-                          </dependency>
+                            <!-- Specify provider to process JUnit4 tests -->
+                            <dependency>
+                                <groupId>org.apache.maven.surefire</groupId>
+                                <artifactId>surefire-junit47</artifactId>
+                                <version>2.22.2</version>
+                            </dependency>
                         </dependencies>
                     </plugin>
                 </plugins>

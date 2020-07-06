@@ -13,16 +13,21 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-new hobs.TestSuite("WKND SPA Reat Tests", {path:"/apps/wknd-spa-react/tests/SampleTests.js", register: true})
+new hobs.TestSuite("WKND SPA React Tests", {
+  path: "/apps/wknd-spa-react/tests/SampleTests.js",
+  register: true,
+})
 
-    .addTestCase(new hobs.TestCase("Hello World component on english page")
-        .navigateTo("/content/wknd-spa-react/en.html")
-        .asserts.location("/content/wknd-spa-react/en.html", true)
-        .asserts.visible(".helloworld", true)
-    )
+  .addTestCase(
+    new hobs.TestCase("Hello World component on english page")
+      .navigateTo("/content/wknd-spa-react/en.html")
+      .asserts.location("/content/wknd-spa-react/en.html", true)
+      .asserts.visible(".helloworld", true)
+  )
 
-    .addTestCase(new hobs.TestCase("Hello World component on french page")
-        .navigateTo("/content/wknd-spa-react/fr.html")
-        .asserts.location("/content/wknd-spa-react/fr.html", true)
-        .asserts.visible(".helloworld", true)
-    );
+  .addTestCase(
+    new hobs.TestCase("Hello World component on french page")
+      .navigateTo("/content/wknd-spa-react/fr.html")
+      .asserts.location("/content/wknd-spa-react/fr.html", true)
+      .asserts.visible(".helloworld", true)
+  );

@@ -24,7 +24,7 @@
       "templateName": "spa-page-template",
       "designPath": "/libs/settings/wcm/designs/default",
       "language": "en",
-      "title": "WKND SPA Reat Home Page",
+      "title": "WKND SPA React Home Page",
       "cssClassNames": "spa page basicpage",
       ":type": "wknd-spa-react/components/page",
       ":items": {
@@ -51,9 +51,15 @@
                   "text": "<p>Hello World!</p>",
                   "richText": true,
                   ":type": "wknd-spa-react/components/text"
+                },
+                "image": {
+                  "alt": "Rock Climber in New Zealand",
+                  "title": "Rock Climber in New Zealand",
+                  "src": "/etc.clientlibs/wknd-spa-react/clientlibs/clientlib-react/resources/logo512.png",
+                  ":type": "wknd-spa-react/components/image"
                 }
               },
-              ":itemsOrder": ["text", "text_1"],
+              ":itemsOrder": ["text", "text_1", "image"],
               ":type": "wcm/foundation/components/responsivegrid"
             }
           },

@@ -14,7 +14,8 @@
  |  See the License for the specific language governing permissions and
  |  limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <!-- ====================================================================== -->
@@ -31,8 +32,8 @@
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
     <artifactId>wknd-spa-react.it.tests</artifactId>
-    <name>WKND SPA Reat - Integration Tests Bundles</name>
-    <description>Bundles for Integration Tests for WKND SPA Reat</description>
+    <name>WKND SPA React - Integration Tests Bundles</name>
+    <description>Bundles for Integration Tests for WKND SPA React</description>
 
     <!-- <scm>
         <connection></connection>
@@ -58,12 +59,12 @@
                         </goals>
                         <configuration>
                             <bnd><![CDATA[
-Bundle-Category: WKND SPA Reat
+Bundle-Category: WKND SPA React
 -exportcontents: ${packages;VERSIONED}
 -snapshot: ${tstamp;yyyyMMddHHmmssSSS}
 Bundle-DocURL:
 Sling-Test-Regexp: .*Test
-                            ]]></bnd>
+                            ]]>                            </bnd>
                         </configuration>
                     </execution>
                 </executions>
