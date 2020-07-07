@@ -1,65 +1,69 @@
 {
-  "templateName": "spa-app-template",
   "designPath": "/libs/settings/wcm/designs/default",
+  "templateName": "spa-app-template",
+  "cssClassNames": "spa page basicpage",
   "language": "en",
   "title": "en",
-  "cssClassNames": "spa page basicpage",
   ":type": "wknd-spa-react/components/spa",
-  ":items": {
-    "root": {
-      "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
-      "columnClassNames": {},
-      "columnCount": 12,
-      ":items": {},
-      ":itemsOrder": [],
-      ":type": "wknd-spa-react/components/container"
-    }
-  },
-  ":itemsOrder": ["root"],
   ":hierarchyType": "page",
   ":path": "/content/wknd-spa-react/nz/en",
   ":children": {
     "/content/wknd-spa-react/nz/en/home": {
-      "lastModifiedDate": 1593910257830,
-      "templateName": "spa-page-template",
       "designPath": "/libs/settings/wcm/designs/default",
+      "templateName": "spa-page-template",
+      "cssClassNames": "spa page basicpage",
+      "lastModifiedDate": 1594022623666,
       "language": "en",
       "title": "WKND SPA React Home Page",
-      "cssClassNames": "spa page basicpage",
       ":type": "wknd-spa-react/components/page",
+      ":hierarchyType": "page",
+      ":path": "/content/wknd-spa-react/nz/en/home",
       ":items": {
         "root": {
-          "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
           "columnClassNames": {
             "responsivegrid": "aem-GridColumn aem-GridColumn--default--12"
           },
+          "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
           "columnCount": 12,
           ":items": {
             "responsivegrid": {
-              "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
               "columnClassNames": {
+                "image": "aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
+                "image_1933145465": "aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
                 "text": "aem-GridColumn aem-GridColumn--default--12"
               },
+              "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
               "columnCount": 12,
               ":items": {
                 "text": {
-                  "text": "<p>Hello World!!!</p>",
-                  "richText": true,
-                  ":type": "wknd-spa-react/components/text"
-                },
-                "text_1": {
-                  "text": "<p>Hello World!</p>",
+                  "text": "\u003Cp\u003EHello World!\u003C/p\u003E",
                   "richText": true,
                   ":type": "wknd-spa-react/components/text"
                 },
                 "image": {
-                  "alt": "Rock Climber in New Zealand",
-                  "title": "Rock Climber in New Zealand",
-                  "src": "/etc.clientlibs/wknd-spa-react/clientlibs/clientlib-react/resources/logo512.png",
+                  "alt": "Arctic Surfing in Lofoten, Northern Norway, Europe",
+                  "title": "Northern Lights",
+                  "src": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image.coreimg.jpeg/1594022133013/northern-lights.jpeg",
+                  "srcUriTemplate": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image.coreimg{.width}.jpeg/1594022133013/northern-lights.jpeg",
+                  "areas": [],
+                  "uuid": "24be0df2-92ae-4cd5-91f2-ca5a7fbf3dff",
+                  "lazyEnabled": false,
+                  "widths": [],
+                  ":type": "wknd-spa-react/components/image"
+                },
+                "image_1933145465": {
+                  "alt": "Arctic Surfing in Lofoten, Northern Norway, Europe",
+                  "title": "Surfer Wave 02",
+                  "src": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image_1933145465.coreimg.jpeg/1594022615158/surfer-wave-02.jpeg",
+                  "srcUriTemplate": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image_1933145465.coreimg{.width}.jpeg/1594022615158/surfer-wave-02.jpeg",
+                  "areas": [],
+                  "uuid": "b55dc097-e0cb-4219-9525-dda1fb64fd8c",
+                  "lazyEnabled": false,
+                  "widths": [],
                   ":type": "wknd-spa-react/components/image"
                 }
               },
-              ":itemsOrder": ["text", "text_1", "image"],
+              ":itemsOrder": ["text", "image", "image_1933145465"],
               ":type": "wcm/foundation/components/responsivegrid"
             }
           },
@@ -67,9 +71,88 @@
           ":type": "wcm/foundation/components/responsivegrid"
         }
       },
-      ":itemsOrder": ["root"],
-      ":hierarchyType": "page",
-      ":path": "/content/wknd-spa-react/nz/en/home"
+      ":itemsOrder": ["root"]
     }
-  }
+  },
+  ":items": {
+    "root": {
+      "columnClassNames": {
+        "container": "aem-GridColumn aem-GridColumn--default--12"
+      },
+      "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+      "columnCount": 12,
+      ":items": {
+        "container": {
+          "columnClassNames": {
+            "container": "aem-GridColumn aem-GridColumn--default--12",
+            "title": "aem-GridColumn aem-GridColumn--default--12"
+          },
+          "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+          "columnCount": 12,
+          ":items": {
+            "title": {
+              "linkDisabled": false,
+              "text": "WKND SPA React Home Page",
+              ":type": "wknd-spa-react/components/title"
+            },
+            "container": {
+              "columnClassNames": {
+                "helloworld": "aem-GridColumn aem-GridColumn--default--12",
+                "teaser_copy": "aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
+                "teaser_copy_1579324932": "aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
+                "teaser": "aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none"
+              },
+              "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+              "columnCount": 12,
+              ":items": {
+                "teaser": {
+                  "title": "Epic Journey",
+                  "description": "\u003Cp\u003EDon't stop half way, go for the top!\u003C/p\u003E\r\n",
+                  "actionsEnabled": false,
+                  "imageLinkHidden": false,
+                  "titleLinkHidden": false,
+                  "actions": [],
+                  ":type": "wknd-spa-react/components/teaser"
+                },
+                "teaser_copy": {
+                  "title": "Epic Journey",
+                  "description": "\u003Cp\u003EDon't stop half way, go for the top!\u003C/p\u003E\r\n",
+                  "actionsEnabled": false,
+                  "imageLinkHidden": false,
+                  "titleLinkHidden": false,
+                  "actions": [],
+                  ":type": "wknd-spa-react/components/teaser"
+                },
+                "teaser_copy_1579324932": {
+                  "title": "Epic Journey",
+                  "description": "\u003Cp\u003EDon't stop half way, go for the top!\u003C/p\u003E\r\n",
+                  "actionsEnabled": false,
+                  "imageLinkHidden": false,
+                  "titleLinkHidden": false,
+                  "actions": [],
+                  ":type": "wknd-spa-react/components/teaser"
+                },
+                "helloworld": {
+                  ":type": "wknd-spa-react/components/helloworld",
+                  "text": "lalala :)"
+                }
+              },
+              ":itemsOrder": [
+                "teaser",
+                "teaser_copy",
+                "teaser_copy_1579324932",
+                "helloworld"
+              ],
+              ":type": "wknd-spa-react/components/container"
+            }
+          },
+          ":itemsOrder": ["title", "container"],
+          ":type": "wknd-spa-react/components/container"
+        }
+      },
+      ":itemsOrder": ["container"],
+      ":type": "wknd-spa-react/components/container"
+    }
+  },
+  ":itemsOrder": ["root"]
 }

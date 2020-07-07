@@ -141,8 +141,29 @@
                 </policy_spa>
             </page>
             <spa jcr:primaryType="nt:unstructured">
-                <default jcr:primaryType="nt:unstructured" jcr:title="WKND SPA React App Policy" sling:resourceType="wcm/core/components/policy/policy" clientlibs="[wcm.foundation.components.page.responsive]" isRoot="{Boolean}true" structureDepth="3" />
+                <default jcr:primaryType="nt:unstructured" jcr:title="WKND SPA React App Policy" sling:resourceType="wcm/core/components/policy/policy" clientlibs="[wknd-spa-react.react]" isRoot="{Boolean}true" structureDepth="3" />
             </spa>
         </components>
     </wknd-spa-react>
+    <wcm jcr:primaryType="nt:unstructured">
+        <foundation jcr:primaryType="nt:unstructured">
+            <components jcr:primaryType="nt:unstructured">
+                <responsivegrid jcr:primaryType="nt:unstructured">
+                    <default jcr:description="Includes only SPA-Enabled components." jcr:primaryType="nt:unstructured" jcr:title="SPA Content" sling:resourceType="wcm/core/components/policy/policy" components="[/libs/wcm/foundation/components/responsivegrid,/apps/wknd-spa-react/components/image,/apps/wknd-spa-react/components/text]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <mapping_1590519353231
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="wknd-spa-react/components/image"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                    </default>
+                </responsivegrid>
+            </components>
+        </foundation>
+    </wcm>
 </jcr:root>
