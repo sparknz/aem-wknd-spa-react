@@ -12,7 +12,7 @@
       "designPath": "/libs/settings/wcm/designs/default",
       "templateName": "spa-page-template",
       "cssClassNames": "spa page basicpage",
-      "lastModifiedDate": 1594022623666,
+      "lastModifiedDate": 1594176494074,
       "language": "en",
       "title": "WKND SPA React Home Page",
       ":type": "wknd-spa-react/components/page",
@@ -28,19 +28,37 @@
           ":items": {
             "responsivegrid": {
               "columnClassNames": {
-                "image": "aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
-                "image_1933145465": "aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
-                "text": "aem-GridColumn aem-GridColumn--default--12"
+                "image": "aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
+                "image_1933145465": "aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
+                "text_428355131": "aem-GridColumn aem-GridColumn--default--12",
+                "image_567575133": "aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
+                "text": "aem-GridColumn aem-GridColumn--default--12",
+                "title": "aem-GridColumn aem-GridColumn--default--12"
               },
               "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
               "columnCount": 12,
               ":items": {
+                "title": {
+                  "id": "title-fb5c04b0a5",
+                  "linkDisabled": false,
+                  "type": "h1",
+                  "text": "WKND SPA React Home Page",
+                  ":type": "wknd-spa-react/components/title"
+                },
                 "text": {
-                  "text": "\u003Cp\u003EHello World!\u003C/p\u003E",
+                  "id": "text-1c5b092d1f",
+                  "text": "\u003Ch2\u003EWhat are you going to do this weekend?\u003C/h2\u003E\n",
+                  "richText": true,
+                  ":type": "wknd-spa-react/components/text"
+                },
+                "text_428355131": {
+                  "id": "text-e2ffb79c25",
+                  "text": "\u003Cp\u003Eвыаыва\u003C/p\u003E\n",
                   "richText": true,
                   ":type": "wknd-spa-react/components/text"
                 },
                 "image": {
+                  "id": "image-aa9c897da3",
                   "alt": "Arctic Surfing in Lofoten, Northern Norway, Europe",
                   "title": "Northern Lights",
                   "src": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image.coreimg.jpeg/1594022133013/northern-lights.jpeg",
@@ -52,6 +70,7 @@
                   ":type": "wknd-spa-react/components/image"
                 },
                 "image_1933145465": {
+                  "id": "image-8840f642ec",
                   "alt": "Arctic Surfing in Lofoten, Northern Norway, Europe",
                   "title": "Surfer Wave 02",
                   "src": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image_1933145465.coreimg.jpeg/1594022615158/surfer-wave-02.jpeg",
@@ -61,9 +80,28 @@
                   "lazyEnabled": false,
                   "widths": [],
                   ":type": "wknd-spa-react/components/image"
+                },
+                "image_567575133": {
+                  "id": "image-f94cb3c086",
+                  "alt": "Arctic Surfing in Lofoten, Northern Norway, Europe",
+                  "title": "Majestic Rainbow",
+                  "src": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image_567575133.coreimg.jpeg/1594084186061/majestic-rainbow.jpeg",
+                  "srcUriTemplate": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image_567575133.coreimg{.width}.jpeg/1594084186061/majestic-rainbow.jpeg",
+                  "areas": [],
+                  "uuid": "72feab95-6040-4af8-a199-a11a23e22a56",
+                  "lazyEnabled": false,
+                  "widths": [],
+                  ":type": "wknd-spa-react/components/image"
                 }
               },
-              ":itemsOrder": ["text", "image", "image_1933145465"],
+              ":itemsOrder": [
+                "title",
+                "text",
+                "text_428355131",
+                "image",
+                "image_1933145465",
+                "image_567575133"
+              ],
               ":type": "wcm/foundation/components/responsivegrid"
             }
           },
@@ -91,6 +129,7 @@
           "columnCount": 12,
           ":items": {
             "title": {
+              "id": "title-20ca226551",
               "linkDisabled": false,
               "text": "WKND SPA React Home Page",
               ":type": "wknd-spa-react/components/title"
@@ -106,6 +145,7 @@
               "columnCount": 12,
               ":items": {
                 "teaser": {
+                  "id": "teaser-2237766d50",
                   "title": "Epic Journey",
                   "description": "\u003Cp\u003EDon't stop half way, go for the top!\u003C/p\u003E\r\n",
                   "actionsEnabled": false,
@@ -115,6 +155,7 @@
                   ":type": "wknd-spa-react/components/teaser"
                 },
                 "teaser_copy": {
+                  "id": "teaser-6fdbcf06d3",
                   "title": "Epic Journey",
                   "description": "\u003Cp\u003EDon't stop half way, go for the top!\u003C/p\u003E\r\n",
                   "actionsEnabled": false,
@@ -124,6 +165,7 @@
                   ":type": "wknd-spa-react/components/teaser"
                 },
                 "teaser_copy_1579324932": {
+                  "id": "teaser-81d52381a6",
                   "title": "Epic Journey",
                   "description": "\u003Cp\u003EDon't stop half way, go for the top!\u003C/p\u003E\r\n",
                   "actionsEnabled": false,

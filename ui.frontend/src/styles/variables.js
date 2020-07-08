@@ -6,10 +6,11 @@ const colors = {
   white: '#FFFFFF',
   yellow: '#FFEA00',
   blue: '#0045FF',
+  purple: '#5f259f',
 };
 
 const typography = {
-  fontFamilySansSerif: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+  fontFamilySansSerif: '"AvenirNextLTPro-Medium", Helvetica, Arial, sans-serif',
   fontFamilySerif: 'Georgia, "Times New Roman", Times, serif',
 
   fontSizeBase: '18px',

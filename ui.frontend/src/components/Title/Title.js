@@ -16,37 +16,48 @@
 
 import React from 'react';
 import { MapTo } from '@adobe/cq-react-editable-components';
-import DOMPurify from 'dompurify';
-import extractModelId from '../../utils/extract-model-id';
+import styled from 'styled-components';
+import { theme } from 'styled-tools';
 
-/**
- * Default Edit configuration for the Text component that interact with the Core Text component and sub-types
- *
- * @type EditConfig
- */
-const TextEditConfig = {
-  emptyLabel: 'Text',
+const TitleEditConfig = {
+  emptyLabel: 'Title',
 
   isEmpty: function (props) {
     return !props || !props.text || props.text.trim().length < 1;
   },
 };
 
-/**
- * Text React component
- */
-function Text({ cqPath, text, richText }) {
-  return richText ? (
-    <div
-      id={extractModelId(cqPath)}
-      data-rte-editelement
-      dangerouslySetInnerHTML={{
-        __html: DOMPurify.sanitize(text),
-      }}
-    />
-  ) : (
-    <p>{text}</p>
+const TitleContainer = styled.div`
+  h1 {
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+`;
+
+const TitleText = styled.div`
+  color: ${theme('purple')};
+`;
+
+const TitleUnderline = styled.div`
+  background: ${theme('purple')};
+  margin-top: 24px;
+  margin-bottom: 24px;
+  height: 5px;
+  width: 106px;
+`;
+
+function Title({ type = 'h1', text }) {
+  return (
+    <TitleContainer>
+      <TitleText as={type}>{text}</TitleText>
+      <TitleUnderline />
+    </TitleContainer>
   );
 }
 
-export default MapTo('wknd-spa-react/components/text')(Text, TextEditConfig);
+export default MapTo('wknd-spa-react/components/title')(Title, TitleEditConfig);
