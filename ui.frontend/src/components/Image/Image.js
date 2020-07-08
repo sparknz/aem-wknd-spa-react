@@ -21,15 +21,8 @@ const Image = (props) => {
     return null;
   }
 
-  return (
-    <div className="Image">
-      <ImageSrc
-        src={props.src}
-        alt={props.alt}
-        title={props.title ? props.title : props.alt}
-      />
-    </div>
-  );
+  const { src, alt, title } = props;
+  return <ImageSrc src={src} alt={alt} title={title || alt} />;
 };
 
 export default MapTo('wknd-spa-react/components/image')(Image, ImageEditConfig);

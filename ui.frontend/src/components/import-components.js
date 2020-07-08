@@ -14,6 +14,6 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-import './Page/Page';
-import './Text/Text';
-import './Image/Image';
+import './Page';
+import './Text';
+import './Image';
