@@ -2,6 +2,28 @@
 
 This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
 
+Created with:
+
+```
+% mvn -B archetype:generate \
+ -D archetypeGroupId=com.adobe.granite.archetypes \
+ -D archetypeArtifactId=aem-project-archetype \
+ -D archetypeVersion=23 \
+ -D groupId="com.adobe.aem.guides" \
+ -D artifactId="wknd-spa-react" \
+ -D version=1.0.0-SNAPSHOT \
+ -D package="com.adobe.aem.guides.wknd.spa.react" \
+ -D appId="wknd-spa-react" \
+ -D appTitle="WKND SPA React" \
+ -D aemVersion=6.5.0 \
+ -D languageCountry=en_nz \
+ -D includeExamples=n \
+ -D includeErrorHandler=n \
+ -D frontendModule=react \
+ -D singleCountry=y \
+ -D includeDispatcherConfig=y
+```
+
 ## Modules
 
 The main parts of the template are:
