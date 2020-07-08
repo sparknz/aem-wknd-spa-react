@@ -1,9 +1,10 @@
 import React from 'react';
+import { MapTo } from '@adobe/cq-react-editable-components';
 import styled from 'styled-components';
 import { theme } from 'styled-tools';
 import wkndLogoDark from '../../media/wknd-logo-dk.png';
 
-const Header = styled.header`
+const HeaderContainer = styled.header`
   width: 100%;
   position: fixed;
   top: 0;
@@ -13,7 +14,7 @@ const Header = styled.header`
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.24);
 `;
 
-const HeaderContainer = styled.div`
+const HeaderContent = styled.div`
   display: flex;
   max-width: $max-width;
   margin: 0 auto;
@@ -32,14 +33,31 @@ const LogoImg = styled.img`
   width: 100px;
 `;
 
-export default () => {
+const HeaderEditConfig = {
+  emptyLabel: 'Header',
+
+  isEmpty: function (props) {
+    return !props || !props.items || props.items.length < 1;
+  },
+};
+
+function Header(props) {
+  if (HeaderEditConfig.isEmpty(props)) {
+    return null;
+  }
+
   return (
-    <Header>
-      <HeaderContainer>
+    <HeaderContainer className="Header">
+      <HeaderContent>
         <Logo>
           <LogoImg src={wkndLogoDark} alt="WKND SPA" />
         </Logo>
-      </HeaderContainer>
-    </Header>
+      </HeaderContent>
+    </HeaderContainer>
   );
-};
+}
+
+export default MapTo('wknd-spa-react/components/header')(
+  Header,
+  HeaderEditConfig,
+);

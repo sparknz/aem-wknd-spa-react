@@ -4,7 +4,6 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 import { theme } from 'styled-tools';
 import { theme as appTheme } from './styles/variables';
-import Header from './components/Header';
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -32,7 +31,6 @@ class App extends Page {
       <ThemeProvider theme={appTheme}>
         <GlobalStyle />
         <div>
-          <Header />
           {this.childComponents}
           {this.childPages}
         </div>
