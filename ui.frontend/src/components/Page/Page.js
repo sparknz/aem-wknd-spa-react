@@ -17,7 +17,7 @@
 import {
   MapTo,
   Page,
-  withComponentMappingContext
+  withComponentMappingContext,
 } from '@adobe/cq-react-editable-components';
 import { withRoute } from '../RouteHelper/RouteHelper';
 
@@ -36,5 +36,5 @@ class AppPage extends Page {
 }
 
 export default MapTo('wknd-spa-react/components/page')(
-  withComponentMappingContext(withRoute(AppPage))
+  withComponentMappingContext(withRoute(AppPage)),
 );

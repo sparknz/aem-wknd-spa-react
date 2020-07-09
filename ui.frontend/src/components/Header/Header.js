@@ -2,6 +2,9 @@ import React from 'react';
 import { MapTo } from '@adobe/cq-react-editable-components';
 import styled from 'styled-components';
 import { theme } from 'styled-tools';
+import { Link } from 'react-router-dom';
+import Navigation from '../Navigation';
+
 import wkndLogoDark from '../../media/wknd-logo-dk.png';
 
 const HeaderContainer = styled.header`
@@ -46,12 +49,16 @@ function Header(props) {
     return null;
   }
 
+  const { items } = props;
   return (
     <HeaderContainer className="Header">
       <HeaderContent>
         <Logo>
-          <LogoImg src={wkndLogoDark} alt="WKND SPA" />
+          <Link to={items[0].url}>
+            <LogoImg src={wkndLogoDark} alt="WKND SPA" />
+          </Link>
         </Logo>
+        <Navigation {...props} />
       </HeaderContent>
     </HeaderContainer>
   );

@@ -44,7 +44,7 @@ export const withRoute = (WrappedComponent, extension) => {
           key={routePath}
           exact
           path={'(.*)' + routePath + '(.' + extension + ')?'}
-          render={routeProps => {
+          render={(routeProps) => {
             return <WrappedComponent {...this.props} {...routeProps} />;
           }}
         />
