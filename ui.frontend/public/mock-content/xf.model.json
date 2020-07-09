@@ -1,0 +1,28 @@
+{
+  "columnCount": 12,
+  "columnClassNames": {
+    "responsivegrid": "aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--offset--default--0 aem-GridColumn--default--none"
+  },
+  "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+  ":items": {
+    "responsivegrid": {
+      "columnCount": 12,
+      "columnClassNames": {
+        "text": "aem-GridColumn aem-GridColumn--default--12"
+      },
+      "gridClassNames": "aem-Grid aem-Grid--default--12",
+      ":items": {
+        "text": {
+          "id": "text-44e3615687",
+          "text": "<h2>Customer communications</h2>\n<p>This page is a record of communications sent to customers by email and SMS.</p>\n<p>The comms appear in descending date order.</p>\n<h2>2 April 2020</h2>\n",
+          "richText": true,
+          ":type": "wknd-spa-react/components/text"
+        }
+      },
+      ":itemsOrder": ["text"],
+      ":type": "wcm/foundation/components/responsivegrid"
+    }
+  },
+  ":itemsOrder": ["responsivegrid"],
+  ":type": "wcm/foundation/components/responsivegrid"
+}

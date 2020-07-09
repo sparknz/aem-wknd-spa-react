@@ -1,6 +1,6 @@
 {
-  "designPath": "/libs/settings/wcm/designs/default",
   "templateName": "spa-app-template",
+  "designPath": "/libs/settings/wcm/designs/default",
   "cssClassNames": "spa page basicpage",
   "language": "en",
   "title": "en",
@@ -9,31 +9,86 @@
   ":path": "/content/wknd-spa-react/nz/en",
   ":children": {
     "/content/wknd-spa-react/nz/en/home": {
-      "designPath": "/libs/settings/wcm/designs/default",
       "templateName": "spa-page-template",
+      "designPath": "/libs/settings/wcm/designs/default",
       "cssClassNames": "spa page basicpage",
-      "lastModifiedDate": 1594176494074,
       "language": "en",
       "title": "WKND SPA React Home Page",
+      "lastModifiedDate": 1594326373999,
       ":type": "wknd-spa-react/components/page",
       ":hierarchyType": "page",
       ":path": "/content/wknd-spa-react/nz/en/home",
       ":items": {
         "root": {
           "columnClassNames": {
+            "header": "aem-GridColumn aem-GridColumn--default--12",
             "responsivegrid": "aem-GridColumn aem-GridColumn--default--12"
           },
           "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
           "columnCount": 12,
           ":items": {
+            "header": {
+              "id": "header-b9728d14b6",
+              "items": [
+                {
+                  "id": "header-b9728d14b6-item-b418e2202a",
+                  "path": "/content/wknd-spa-react/nz/en/home",
+                  "children": [
+                    {
+                      "id": "header-b9728d14b6-item-08c9db48cf",
+                      "path": "/content/wknd-spa-react/nz/en/home/page-1",
+                      "children": [],
+                      "level": 1,
+                      "active": false,
+                      "url": "/content/wknd-spa-react/nz/en/home/page-1.html",
+                      "title": "Page 1",
+                      "lastModified": 1594279401384,
+                      ":type": "wknd-spa-react/components/page"
+                    },
+                    {
+                      "id": "header-b9728d14b6-item-3815128deb",
+                      "path": "/content/wknd-spa-react/nz/en/home/page-2",
+                      "children": [
+                        {
+                          "id": "header-b9728d14b6-item-0447ce5c0f",
+                          "path": "/content/wknd-spa-react/nz/en/home/page-2/page-3",
+                          "children": [],
+                          "level": 2,
+                          "active": false,
+                          "url": "/content/wknd-spa-react/nz/en/home/page-2/page-3.html",
+                          "title": "Page 3",
+                          "lastModified": 1594279614439,
+                          ":type": "wknd-spa-react/components/page"
+                        }
+                      ],
+                      "level": 1,
+                      "active": true,
+                      "url": "/content/wknd-spa-react/nz/en/home/page-2.html",
+                      "title": "Page 2",
+                      "lastModified": 1594279558850,
+                      ":type": "wknd-spa-react/components/page"
+                    }
+                  ],
+                  "level": 0,
+                  "active": true,
+                  "url": "/content/wknd-spa-react/nz/en/home.html",
+                  "title": "WKND SPA React Home Page",
+                  "lastModified": 1594326373999,
+                  ":type": "wknd-spa-react/components/page"
+                }
+              ],
+              ":type": "wknd-spa-react/components/header"
+            },
             "responsivegrid": {
               "columnClassNames": {
                 "image": "aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
-                "image_1933145465": "aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
-                "text_428355131": "aem-GridColumn aem-GridColumn--default--12",
-                "image_567575133": "aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
+                "image_450806964": "aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
+                "text_832747831": "aem-GridColumn aem-GridColumn--default--12",
+                "image_376553230": "aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
                 "text": "aem-GridColumn aem-GridColumn--default--12",
-                "title": "aem-GridColumn aem-GridColumn--default--12"
+                "title": "aem-GridColumn aem-GridColumn--default--12",
+                "image_119416848": "aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
+                "experiencefragment": "aem-GridColumn aem-GridColumn--default--12"
               },
               "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
               "columnCount": 12,
@@ -41,19 +96,18 @@
                 "title": {
                   "id": "title-fb5c04b0a5",
                   "linkDisabled": false,
-                  "type": "h1",
-                  "text": "WKND SPA React Home Page",
+                  "text": "Home",
                   ":type": "wknd-spa-react/components/title"
                 },
-                "text": {
-                  "id": "text-1c5b092d1f",
-                  "text": "\u003Ch2\u003EWhat are you going to do this weekend?\u003C/h2\u003E\n",
+                "text_832747831": {
+                  "id": "text-394d0fa75a",
+                  "text": "\u003Cp\u003EHello Johnson!\u003C/p\u003E\n",
                   "richText": true,
                   ":type": "wknd-spa-react/components/text"
                 },
-                "text_428355131": {
-                  "id": "text-e2ffb79c25",
-                  "text": "\u003Cp\u003Eвыаыва\u003C/p\u003E\n",
+                "text": {
+                  "id": "text-1c5b092d1f",
+                  "text": "\u003Cp\u003EHello World!\u003C/p\u003E",
                   "richText": true,
                   ":type": "wknd-spa-react/components/text"
                 },
@@ -61,51 +115,283 @@
                   "id": "image-aa9c897da3",
                   "alt": "Arctic Surfing in Lofoten, Northern Norway, Europe",
                   "title": "Northern Lights",
-                  "src": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image.coreimg.jpeg/1594022133013/northern-lights.jpeg",
-                  "srcUriTemplate": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image.coreimg{.width}.jpeg/1594022133013/northern-lights.jpeg",
+                  "src": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image.coreimg.jpeg/1594250338569/northern-lights.jpeg",
+                  "srcUriTemplate": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image.coreimg{.width}.jpeg/1594250338569/northern-lights.jpeg",
                   "areas": [],
                   "uuid": "24be0df2-92ae-4cd5-91f2-ca5a7fbf3dff",
                   "lazyEnabled": false,
                   "widths": [],
                   ":type": "wknd-spa-react/components/image"
                 },
-                "image_1933145465": {
-                  "id": "image-8840f642ec",
+                "image_376553230": {
+                  "id": "image-f6fa5af052",
                   "alt": "Arctic Surfing in Lofoten, Northern Norway, Europe",
                   "title": "Surfer Wave 02",
-                  "src": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image_1933145465.coreimg.jpeg/1594022615158/surfer-wave-02.jpeg",
-                  "srcUriTemplate": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image_1933145465.coreimg{.width}.jpeg/1594022615158/surfer-wave-02.jpeg",
+                  "src": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image_376553230.coreimg.jpeg/1594250360839/surfer-wave-02.jpeg",
+                  "srcUriTemplate": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image_376553230.coreimg{.width}.jpeg/1594250360839/surfer-wave-02.jpeg",
                   "areas": [],
                   "uuid": "b55dc097-e0cb-4219-9525-dda1fb64fd8c",
                   "lazyEnabled": false,
                   "widths": [],
                   ":type": "wknd-spa-react/components/image"
                 },
-                "image_567575133": {
-                  "id": "image-f94cb3c086",
+                "image_119416848": {
+                  "id": "image-248251c700",
                   "alt": "Arctic Surfing in Lofoten, Northern Norway, Europe",
-                  "title": "Majestic Rainbow",
-                  "src": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image_567575133.coreimg.jpeg/1594084186061/majestic-rainbow.jpeg",
-                  "srcUriTemplate": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image_567575133.coreimg{.width}.jpeg/1594084186061/majestic-rainbow.jpeg",
+                  "title": "Surfer Wave 01",
+                  "src": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image_119416848.coreimg.jpeg/1594250366017/surfer-wave-01.jpeg",
+                  "srcUriTemplate": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image_119416848.coreimg{.width}.jpeg/1594250366017/surfer-wave-01.jpeg",
                   "areas": [],
-                  "uuid": "72feab95-6040-4af8-a199-a11a23e22a56",
+                  "uuid": "a052b0ad-4a40-4e30-8b5e-bae9f80ba19a",
+                  "lazyEnabled": false,
+                  "widths": [],
+                  ":type": "wknd-spa-react/components/image"
+                },
+                "image_450806964": {
+                  "id": "image-e55ec858c8",
+                  "src": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image_450806964.coreimg.jpeg/1594267281386/asset.jpeg",
+                  "srcUriTemplate": "/content/wknd-spa-react/nz/en/home/_jcr_content/root/responsivegrid/image_450806964.coreimg{.width}.jpeg/1594267281386/asset.jpeg",
+                  "areas": [],
+                  "uuid": "7641ef91-252b-4575-9e19-0b0cfbf681e2",
+                  "lazyEnabled": false,
+                  "widths": [],
+                  ":type": "wknd-spa-react/components/image"
+                },
+                "experiencefragment": {
+                  "localizedFragmentVariationPath": "/etc.clientlibs/wknd-spa-react/clientlibs/clientlib-react/resources/mock-content/xf.model.json",
+                  ":type": "wknd-spa-react/components/experiencefragment"
+                }
+              },
+              ":itemsOrder": [
+                "title",
+                "text_832747831",
+                "text",
+                "image",
+                "image_376553230",
+                "image_119416848",
+                "image_450806964",
+                "experiencefragment"
+              ],
+              ":type": "wcm/foundation/components/responsivegrid"
+            }
+          },
+          ":itemsOrder": ["header", "responsivegrid"],
+          ":type": "wcm/foundation/components/responsivegrid"
+        }
+      },
+      ":itemsOrder": ["root"]
+    },
+    "/content/wknd-spa-react/nz/en/home/page-1": {
+      "templateName": "spa-page-template",
+      "designPath": "/libs/settings/wcm/designs/default",
+      "cssClassNames": "spa page basicpage",
+      "language": "en",
+      "title": "Page 1",
+      "lastModifiedDate": 1594279401384,
+      ":type": "wknd-spa-react/components/page",
+      ":hierarchyType": "page",
+      ":path": "/content/wknd-spa-react/nz/en/home/page-1",
+      ":items": {
+        "root": {
+          "columnClassNames": {
+            "header": "aem-GridColumn aem-GridColumn--default--12",
+            "responsivegrid": "aem-GridColumn aem-GridColumn--default--12"
+          },
+          "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+          "columnCount": 12,
+          ":items": {
+            "header": {
+              "id": "header-b9728d14b6",
+              "items": [
+                {
+                  "id": "header-b9728d14b6-item-b418e2202a",
+                  "path": "/content/wknd-spa-react/nz/en/home",
+                  "children": [
+                    {
+                      "id": "header-b9728d14b6-item-08c9db48cf",
+                      "path": "/content/wknd-spa-react/nz/en/home/page-1",
+                      "children": [],
+                      "level": 1,
+                      "active": false,
+                      "url": "/content/wknd-spa-react/nz/en/home/page-1.html",
+                      "title": "Page 1",
+                      "lastModified": 1594279401384,
+                      ":type": "wknd-spa-react/components/page"
+                    },
+                    {
+                      "id": "header-b9728d14b6-item-3815128deb",
+                      "path": "/content/wknd-spa-react/nz/en/home/page-2",
+                      "children": [
+                        {
+                          "id": "header-b9728d14b6-item-0447ce5c0f",
+                          "path": "/content/wknd-spa-react/nz/en/home/page-2/page-3",
+                          "children": [],
+                          "level": 2,
+                          "active": false,
+                          "url": "/content/wknd-spa-react/nz/en/home/page-2/page-3.html",
+                          "title": "Page 3",
+                          "lastModified": 1594279614439,
+                          ":type": "wknd-spa-react/components/page"
+                        }
+                      ],
+                      "level": 1,
+                      "active": true,
+                      "url": "/content/wknd-spa-react/nz/en/home/page-2.html",
+                      "title": "Page 2",
+                      "lastModified": 1594279558850,
+                      ":type": "wknd-spa-react/components/page"
+                    }
+                  ],
+                  "level": 0,
+                  "active": true,
+                  "url": "/content/wknd-spa-react/nz/en/home.html",
+                  "title": "WKND SPA React Home Page",
+                  "lastModified": 1594326373999,
+                  ":type": "wknd-spa-react/components/page"
+                }
+              ],
+              ":type": "wknd-spa-react/components/header"
+            },
+            "responsivegrid": {
+              "columnClassNames": {
+                "image": "aem-GridColumn aem-GridColumn--default--12",
+                "title": "aem-GridColumn aem-GridColumn--default--12"
+              },
+              "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+              "columnCount": 12,
+              ":items": {
+                "title": {
+                  "id": "title-60eef52566",
+                  "linkDisabled": false,
+                  "text": "Page 2",
+                  ":type": "wknd-spa-react/components/title"
+                },
+                "image": {
+                  "id": "image-849a911165",
+                  "alt": "Arctic Surfing in Lofoten, Northern Norway, Europe",
+                  "title": "Surfer Wave 02",
+                  "src": "/content/wknd-spa-react/nz/en/home/page-1/_jcr_content/root/responsivegrid/image.coreimg.jpeg/1594279401373/surfer-wave-02.jpeg",
+                  "srcUriTemplate": "/content/wknd-spa-react/nz/en/home/page-1/_jcr_content/root/responsivegrid/image.coreimg{.width}.jpeg/1594279401373/surfer-wave-02.jpeg",
+                  "areas": [],
+                  "uuid": "b55dc097-e0cb-4219-9525-dda1fb64fd8c",
                   "lazyEnabled": false,
                   "widths": [],
                   ":type": "wknd-spa-react/components/image"
                 }
               },
-              ":itemsOrder": [
-                "title",
-                "text",
-                "text_428355131",
-                "image",
-                "image_1933145465",
-                "image_567575133"
-              ],
+              ":itemsOrder": ["title", "image"],
               ":type": "wcm/foundation/components/responsivegrid"
             }
           },
-          ":itemsOrder": ["responsivegrid"],
+          ":itemsOrder": ["header", "responsivegrid"],
+          ":type": "wcm/foundation/components/responsivegrid"
+        }
+      },
+      ":itemsOrder": ["root"]
+    },
+    "/content/wknd-spa-react/nz/en/home/page-2": {
+      "templateName": "spa-page-template",
+      "designPath": "/libs/settings/wcm/designs/default",
+      "cssClassNames": "spa page basicpage",
+      "language": "en",
+      "title": "Page 2",
+      "lastModifiedDate": 1594279558850,
+      ":type": "wknd-spa-react/components/page",
+      ":hierarchyType": "page",
+      ":path": "/content/wknd-spa-react/nz/en/home/page-2",
+      ":items": {
+        "root": {
+          "columnClassNames": {
+            "header": "aem-GridColumn aem-GridColumn--default--12",
+            "responsivegrid": "aem-GridColumn aem-GridColumn--default--12"
+          },
+          "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+          "columnCount": 12,
+          ":items": {
+            "header": {
+              "id": "header-b9728d14b6",
+              "items": [
+                {
+                  "id": "header-b9728d14b6-item-b418e2202a",
+                  "path": "/content/wknd-spa-react/nz/en/home",
+                  "children": [
+                    {
+                      "id": "header-b9728d14b6-item-08c9db48cf",
+                      "path": "/content/wknd-spa-react/nz/en/home/page-1",
+                      "children": [],
+                      "level": 1,
+                      "active": false,
+                      "url": "/content/wknd-spa-react/nz/en/home/page-1.html",
+                      "title": "Page 1",
+                      "lastModified": 1594279401384,
+                      ":type": "wknd-spa-react/components/page"
+                    },
+                    {
+                      "id": "header-b9728d14b6-item-3815128deb",
+                      "path": "/content/wknd-spa-react/nz/en/home/page-2",
+                      "children": [
+                        {
+                          "id": "header-b9728d14b6-item-0447ce5c0f",
+                          "path": "/content/wknd-spa-react/nz/en/home/page-2/page-3",
+                          "children": [],
+                          "level": 2,
+                          "active": false,
+                          "url": "/content/wknd-spa-react/nz/en/home/page-2/page-3.html",
+                          "title": "Page 3",
+                          "lastModified": 1594279614439,
+                          ":type": "wknd-spa-react/components/page"
+                        }
+                      ],
+                      "level": 1,
+                      "active": true,
+                      "url": "/content/wknd-spa-react/nz/en/home/page-2.html",
+                      "title": "Page 2",
+                      "lastModified": 1594279558850,
+                      ":type": "wknd-spa-react/components/page"
+                    }
+                  ],
+                  "level": 0,
+                  "active": true,
+                  "url": "/content/wknd-spa-react/nz/en/home.html",
+                  "title": "WKND SPA React Home Page",
+                  "lastModified": 1594326373999,
+                  ":type": "wknd-spa-react/components/page"
+                }
+              ],
+              ":type": "wknd-spa-react/components/header"
+            },
+            "responsivegrid": {
+              "columnClassNames": {
+                "image": "aem-GridColumn aem-GridColumn--default--12",
+                "title": "aem-GridColumn aem-GridColumn--default--12"
+              },
+              "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+              "columnCount": 12,
+              ":items": {
+                "title": {
+                  "id": "title-ce3bda03f3",
+                  "linkDisabled": false,
+                  "text": "Page 2",
+                  ":type": "wknd-spa-react/components/title"
+                },
+                "image": {
+                  "id": "image-701887d1c7",
+                  "alt": "Arctic Surfing in Lofoten, Northern Norway, Europe",
+                  "title": "Northern Lights",
+                  "src": "/content/wknd-spa-react/nz/en/home/page-2/_jcr_content/root/responsivegrid/image.coreimg.jpeg/1594279558847/northern-lights.jpeg",
+                  "srcUriTemplate": "/content/wknd-spa-react/nz/en/home/page-2/_jcr_content/root/responsivegrid/image.coreimg{.width}.jpeg/1594279558847/northern-lights.jpeg",
+                  "areas": [],
+                  "uuid": "24be0df2-92ae-4cd5-91f2-ca5a7fbf3dff",
+                  "lazyEnabled": false,
+                  "widths": [],
+                  ":type": "wknd-spa-react/components/image"
+                }
+              },
+              ":itemsOrder": ["title", "image"],
+              ":type": "wcm/foundation/components/responsivegrid"
+            }
+          },
+          ":itemsOrder": ["header", "responsivegrid"],
           ":type": "wcm/foundation/components/responsivegrid"
         }
       },
@@ -131,7 +417,7 @@
             "title": {
               "id": "title-20ca226551",
               "linkDisabled": false,
-              "text": "WKND SPA React Home Page",
+              "text": "Page 2",
               ":type": "wknd-spa-react/components/title"
             },
             "container": {
