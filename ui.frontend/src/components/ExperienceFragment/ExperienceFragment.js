@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Constants, ModelManager } from '@adobe/cq-spa-page-model-manager';
 import { MapTo, Container } from '@adobe/cq-react-editable-components';
+import { useCQContext } from '../../lib/cqContext';
 
 const ExperienceFragmentEditConfig = {
   emptyLabel: 'Experience Fragment',
@@ -14,21 +15,28 @@ const ExperienceFragmentEditConfig = {
   },
 };
 
-function ExperienceFragment({ localizedFragmentVariationPath }) {
-  const [{ fetching, model, error }, setState] = useState({
-    fetching: false,
+function useFetchModel(path) {
+  const [{ status, model, error }, setState] = useState({
+    status: 'INIT',
     model: undefined,
     error: undefined,
   });
 
-  if (!model && !error) {
-    if (!fetching) {
-      setState({ model, fetching: true });
-      ModelManager.getData(localizedFragmentVariationPath).then(
-        (model) => setState({ fetching: false, model }),
-        (error) => setState({ fetching: false, error }),
-      );
-    }
+  if (status === 'INIT') {
+    setState({ status: 'LOADING' });
+    ModelManager.getData(path).then(
+      (model) => setState({ status: 'DONE', model }),
+      (error) => setState({ status: 'ERROR', error }),
+    );
+  }
+  return { isLoading: status === 'INIT' || status === 'LOADING', model, error };
+}
+
+function ExperienceFragment({ localizedFragmentVariationPath }) {
+  const { isLoading, model } = useFetchModel(localizedFragmentVariationPath);
+  const { isInEditor } = useCQContext();
+
+  if (isLoading) {
     return null;
   }
 
@@ -36,6 +44,7 @@ function ExperienceFragment({ localizedFragmentVariationPath }) {
     <Container
       cqItems={model[Constants.ITEMS_PROP]}
       cqItemsOrder={model[Constants.ITEMS_ORDER_PROP]}
+      isInEditor={isInEditor}
     />
   ) : (
     <span>Error</span>

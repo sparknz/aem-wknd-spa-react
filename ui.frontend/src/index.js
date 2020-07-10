@@ -27,18 +27,21 @@ import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './components/import-components';
+import { CQContextProvider } from './lib/cqContext';
 
 document.addEventListener('DOMContentLoaded', () => {
   ModelManager.initialize().then((pageModel) => {
     render(
       <BrowserRouter>
-        <App
-          cqChildren={pageModel[Constants.CHILDREN_PROP]}
-          cqItems={pageModel[Constants.ITEMS_PROP]}
-          cqItemsOrder={pageModel[Constants.ITEMS_ORDER_PROP]}
-          cqPath={pageModel[Constants.PATH_PROP]}
-          locationPathname={window.location.pathname}
-        />
+        <CQContextProvider>
+          <App
+            cqChildren={pageModel[Constants.CHILDREN_PROP]}
+            cqItems={pageModel[Constants.ITEMS_PROP]}
+            cqItemsOrder={pageModel[Constants.ITEMS_ORDER_PROP]}
+            cqPath={pageModel[Constants.PATH_PROP]}
+            locationPathname={window.location.pathname}
+          />
+        </CQContextProvider>
       </BrowserRouter>,
       document.getElementById('spa-root'),
     );
