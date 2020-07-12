@@ -353,7 +353,7 @@
                     sling:resourceType="wcm/core/components/policy/policy"
                     clientlibs="[wknd-spa-react.react]"
                     isRoot="{Boolean}true"
-                    structureDepth="2"/>
+                    structureDepth="1"/>
             </spa>
             <header jcr:primaryType="nt:unstructured">
                 <policy_1590527695354

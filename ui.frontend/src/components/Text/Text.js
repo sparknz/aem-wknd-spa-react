@@ -32,6 +32,17 @@ const TextEditConfig = {
   },
 };
 
+function getDOMPurify() {
+  if (!process.env.SSR) {
+    return DOMPurify;
+  }
+  // SSR
+  const JSDOM = require('jsdom').JSDOM;
+  return DOMPurify(new JSDOM('<!DOCTYPE html>').window);
+}
+
+const dompurify = getDOMPurify();
+
 /**
  * Text React component
  */
@@ -41,7 +52,7 @@ function Text({ cqPath, text, richText }) {
       id={extractModelId(cqPath)}
       data-rte-editelement
       dangerouslySetInnerHTML={{
-        __html: DOMPurify.sanitize(text),
+        __html: dompurify.sanitize(text),
       }}
     />
   ) : (

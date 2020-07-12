@@ -23,27 +23,43 @@ import 'custom-event-polyfill';
 
 import { Constants, ModelManager } from '@adobe/cq-spa-page-model-manager';
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './components/import-components';
 import { CQContextProvider } from './lib/cqContext';
 
+function render(pageModel, useHydrate) {
+  ReactDOM[useHydrate ? 'hydrate' : 'render'](
+    <BrowserRouter>
+      <CQContextProvider>
+        <App
+          cqChildren={pageModel[Constants.CHILDREN_PROP]}
+          cqItems={pageModel[Constants.ITEMS_PROP]}
+          cqItemsOrder={pageModel[Constants.ITEMS_ORDER_PROP]}
+          cqPath={pageModel[Constants.PATH_PROP]}
+          locationPathname={window.location.pathname}
+        />
+      </CQContextProvider>
+    </BrowserRouter>,
+    document.getElementById('spa-root'),
+  );
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  ModelManager.initialize().then((pageModel) => {
-    render(
-      <BrowserRouter>
-        <CQContextProvider>
-          <App
-            cqChildren={pageModel[Constants.CHILDREN_PROP]}
-            cqItems={pageModel[Constants.ITEMS_PROP]}
-            cqItemsOrder={pageModel[Constants.ITEMS_ORDER_PROP]}
-            cqPath={pageModel[Constants.PATH_PROP]}
-            locationPathname={window.location.pathname}
-          />
-        </CQContextProvider>
-      </BrowserRouter>,
-      document.getElementById('spa-root'),
-    );
+  const jsonScript = document.getElementById('__INITIAL_STATE__');
+  let initialState = null;
+  if (jsonScript) {
+    initialState = JSON.parse(jsonScript.innerText);
+    // Remove the script element from the DOM
+    jsonScript.remove();
+  }
+
+  const initialModel = initialState ? initialState.rootModel : undefined;
+
+  ModelManager.initialize({
+    model: initialModel,
+  }).then((model) => {
+    render(model, !!initialModel);
   });
 });

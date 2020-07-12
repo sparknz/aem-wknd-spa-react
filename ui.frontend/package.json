@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
+    "start:server": "SSR=1 node --inspect src/server/bootstrap.js",
     "build": "react-scripts build && clientlib",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -25,6 +26,9 @@
     "styled-tools": "^1.7.2"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-react": "^7.10.3",
+    "@babel/register": "7.10.3",
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.4.4",
     "@testing-library/user-event": "^12.0.11",
@@ -32,6 +36,9 @@
     "aemsync": "^4.0.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "express": "^4.17.1",
+    "ignore-styles": "^5.0.1",
+    "jsdom": "^16.3.0",
     "react-scripts": "~3.4.1",
     "sinon": "^9.0.2"
   },
