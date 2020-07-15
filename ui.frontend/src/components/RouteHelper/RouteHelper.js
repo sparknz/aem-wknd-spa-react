@@ -14,7 +14,7 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-import React, { Component } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 
 /**
@@ -28,27 +28,49 @@ import { Route } from 'react-router-dom';
  * @param {string} [extension=html]             - extension used to identify a route amongst the tree of resource URLs
  * @returns {CompositeRoute}
  */
+
 export const withRoute = (WrappedComponent, extension) => {
-  return class CompositeRoute extends Component {
-    render() {
-      let routePath = this.props.cqPath;
-      if (!routePath) {
-        return <WrappedComponent {...this.props} />;
+  return function CompositeRoute(props) {
+    const [
+      asyncComponentsLoadingState,
+      setAsyncComponentsLoadingState,
+    ] = React.useState('INIT');
+
+    const routePath = props.cqPath || '';
+
+    // Additional components will be loaded asynchronosly only when CQ path includes 'page-2' in it
+    React.useEffect(() => {
+      if (
+        asyncComponentsLoadingState === 'DONE' ||
+        !routePath.includes('page-2')
+      ) {
+        return;
       }
 
-      extension = extension || 'html';
-
-      // Context path + route path + extension
-      return (
-        <Route
-          key={routePath}
-          exact
-          path={'(.*)' + routePath + '(.' + extension + ')?'}
-          render={(routeProps) => {
-            return <WrappedComponent {...this.props} {...routeProps} />;
-          }}
-        />
+      setAsyncComponentsLoadingState('LOADING');
+      import('../import-components-async').then(() =>
+        setAsyncComponentsLoadingState('DONE'),
       );
+    }, [routePath, asyncComponentsLoadingState]);
+
+    if (!routePath) {
+      return <WrappedComponent {...props} />;
     }
+
+    extension = extension || 'html';
+
+    // Context path + route path + extension
+    return asyncComponentsLoadingState === 'LOADING' ? (
+      <h3>Loading...</h3>
+    ) : (
+      <Route
+        key={routePath}
+        exact
+        path={'(.*)' + routePath + '(.' + extension + ')?'}
+        render={(routeProps) => {
+          return <WrappedComponent {...props} {...routeProps} />;
+        }}
+      />
+    );
   };
 };
