@@ -1,6 +1,4 @@
-# Sample AEM project template
-
-This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
+# Sample AEM SPA Editor application with SSR and code-splitting.
 
 Created with:
 
@@ -33,7 +31,7 @@ The main parts of the template are:
 - ui.content: contains sample content using the components from the ui.apps
 - ui.tests: Java bundle containing JUnit tests that are executed server-side. This bundle is not to be deployed onto production.
 - ui.launcher: contains glue code that deploys the ui.tests bundle (and dependent bundles) to the server and triggers the remote JUnit execution
-- ui.frontend: an optional dedicated front-end build mechanism (Angular, React or general Webpack project)
+- ui.frontend: dedicated front-end build mechanism using React. More details are available [here](ui.frontend/README.md).
 
 ## How to build
 
