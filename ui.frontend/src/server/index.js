@@ -2,10 +2,13 @@ import express from 'express';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import { ModelManager } from '@adobe/cq-spa-page-model-manager';
-import { Constants, EditorContext } from '@adobe/cq-react-editable-components';
-import styled, { ServerStyleSheet } from 'styled-components';
+import { Constants, ModelManager } from '@adobe/cq-spa-page-model-manager';
+import { EditorContext } from '@adobe/cq-react-editable-components';
+import { ServerStyleSheet } from 'styled-components';
+import Loadable from 'react-loadable';
+import { getBundles } from 'react-loadable/webpack';
 
+import stats from '../../build/react-loadable.json';
 import App from '../App';
 import '../components/import-components';
 
@@ -23,24 +26,29 @@ function renderModelToHTMLString(
   isInEditor,
 ) {
   const sheet = new ServerStyleSheet();
+  const modules = [];
 
   const html = ReactDOMServer.renderToString(
     sheet.collectStyles(
       <StaticRouter location={requestUrl} context={{}}>
         <EditorContext.Provider value={isInEditor}>
-          <App
-            cqChildren={model[Constants.CHILDREN_PROP]}
-            cqItems={model[Constants.ITEMS_PROP]}
-            cqItemsOrder={model[Constants.ITEMS_ORDER_PROP]}
-            cqPath={pageModelRootPath}
-            locationPathname={requestPath}
-          />
+          <Loadable.Capture report={(moduleName) => modules.push(moduleName)}>
+            <App
+              cqChildren={model[Constants.CHILDREN_PROP]}
+              cqItems={model[Constants.ITEMS_PROP]}
+              cqItemsOrder={model[Constants.ITEMS_ORDER_PROP]}
+              cqPath={pageModelRootPath}
+              locationPathname={requestPath}
+            />
+          </Loadable.Capture>
         </EditorContext.Provider>
       </StaticRouter>,
     ),
   );
 
-  // We are using ' for the string to we need to make sure we are encoding all other '
+  const bundles = getBundles(stats, modules);
+  const scripts = bundles.filter((bundle) => bundle.file.endsWith('.js'));
+
   const styles = sheet.getStyleTags();
   const state = JSON.stringify({
     rootModel: model,
@@ -50,15 +58,23 @@ function renderModelToHTMLString(
 
   return `
       ${styles}
-      ${html}
+     <div id="spa-root">${html}</div>
      <script type="application/json" id="__INITIAL_STATE__">
          ${state}
-     </script>`;
+     </script>
+     ${scripts
+       .map((script) => {
+         return `<script src="${script.publicPath}"></script>`;
+       })
+       .join('\n')}`;
 }
 
-exapp.post('/content/wknd-spa-react/nz/en/*.html', (req, res, next) => {
+const cqAppRootPath = '/content/wknd-spa-react/nz/en';
+
+exapp.post(`${cqAppRootPath}/*.html`, (req, res, next) => {
   const wcmMode = req.headers['wcm-mode'];
   const isInEditor = (wcmMode && wcmMode === 'EDIT') || wcmMode === 'PREVIEW';
+
   const pagePath = req.path.replace('.html', '');
   const modelClient = new CustomModelClient('http://localhost:4502');
 
@@ -66,20 +82,27 @@ exapp.post('/content/wknd-spa-react/nz/en/*.html', (req, res, next) => {
   // when the server needs to make a call to AEM in order to retrieve the model.
 
   return ModelManager.initialize({
-    path: '/content/wknd-spa-react/nz/en',
+    path: cqAppRootPath,
     modelClient,
   })
-    .then(() => {
+    .then((rootModel) => {
       return ModelManager.getData({
         path: pagePath,
-      }).then((model) => {
+      }).then((pageModel) => {
+        // Make sure the page model is included into the root model.
+        const combinedModel = { ...rootModel };
+        combinedModel[Constants.CHILDREN_PROP] = {
+          ...rootModel[Constants.CHILDREN_PROP],
+          [pagePath]: pageModel,
+        };
+
         res.send(
           renderModelToHTMLString(
-            model,
+            combinedModel,
             pagePath,
             req.url,
             req.path,
-            '/content/wknd-spa-react/nz/en',
+            cqAppRootPath,
             isInEditor,
           ),
         );
@@ -90,4 +113,8 @@ exapp.post('/content/wknd-spa-react/nz/en/*.html', (req, res, next) => {
     });
 });
 
-exapp.listen(4200, () => console.log('Example exapp listening on port 4200!'));
+Loadable.preloadAll().then(() => {
+  exapp.listen(4200, () =>
+    console.log('Example exapp listening on port 4200!'),
+  );
+});

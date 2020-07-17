@@ -380,7 +380,7 @@
                         jcr:primaryType="nt:unstructured"
                         jcr:title="SPA Content"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/libs/wcm/foundation/components/responsivegrid,/apps/wknd-spa-react/components/image,/apps/wknd-spa-react/components/text,/apps/wknd-spa-react/components/title,/apps/wknd-spa-react/components/experiencefragment,wknd-spa-react/components/button]">
+                        components="[/libs/wcm/foundation/components/responsivegrid,/apps/wknd-spa-react/components/image,/apps/wknd-spa-react/components/text,/apps/wknd-spa-react/components/title,/apps/wknd-spa-react/components/experiencefragment,/apps/wknd-spa-react/components/button]">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
                         <cq:authoring jcr:primaryType="nt:unstructured">
                             <assetToComponentMapping jcr:primaryType="nt:unstructured">

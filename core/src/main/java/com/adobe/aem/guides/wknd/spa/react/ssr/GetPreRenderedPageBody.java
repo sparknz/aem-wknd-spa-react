@@ -112,7 +112,7 @@ public class GetPreRenderedPageBody extends SlingSafeMethodsServlet {
 
         } catch (IOException | NullPointerException e) {
             log.warn("Error while trying to Render App server-side: " + e.getMessage(), e);
-            response.getWriter().write("<!-- SSR Error -->");
+            response.getWriter().write("<!-- SSR Error --><div id=\"spa-root\"></div>");
             // Not a big deal - let CSR render the content
         }
     }

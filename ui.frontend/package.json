@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-app-rewired start",
     "start:server": "SSR=1 node --inspect src/server/bootstrap.js",
-    "build": "react-scripts build && clientlib",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "build": "react-app-rewired build && clientlib",
+    "test": "react-app-rewired test",
     "sync": "aemsync -d -w ../ui.apps/src/main/content"
   },
   "dependencies": {
@@ -20,6 +19,7 @@
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
+    "react-loadable": "^5.5.0",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.1.1",
     "styled-normalize": "^8.0.7",
@@ -34,11 +34,13 @@
     "@testing-library/user-event": "^12.0.11",
     "aem-clientlib-generator": "^1.7.4",
     "aemsync": "^4.0.1",
+    "babel-plugin-file-loader": "^2.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "express": "^4.17.1",
     "ignore-styles": "^5.0.1",
     "jsdom": "^16.3.0",
+    "react-app-rewired": "^2.1.6",
     "react-scripts": "~3.4.1",
     "sinon": "^9.0.2"
   },
@@ -48,5 +50,6 @@
   ],
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "config-overrides-path": "config/config-overrides.js"
 }

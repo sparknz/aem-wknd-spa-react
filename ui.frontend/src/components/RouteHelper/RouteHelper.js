@@ -16,6 +16,7 @@
 
 import React from 'react';
 import { Route } from 'react-router-dom';
+import Loadable from 'react-loadable';
 
 /**
  * Helper that facilitate the use of the {@link Route} component
@@ -29,29 +30,15 @@ import { Route } from 'react-router-dom';
  * @returns {CompositeRoute}
  */
 
+const AsyncLoader = Loadable({
+  loader: () => import('../import-components-async'),
+  loading: () => <h3>Loading...</h3>,
+  render: (_, { children }) => <>{children}</>,
+});
+
 export const withRoute = (WrappedComponent, extension) => {
   return function CompositeRoute(props) {
-    const [
-      asyncComponentsLoadingState,
-      setAsyncComponentsLoadingState,
-    ] = React.useState('INIT');
-
-    const routePath = props.cqPath || '';
-
-    // Additional components will be loaded asynchronosly only when CQ path includes 'page-2' in it
-    React.useEffect(() => {
-      if (
-        asyncComponentsLoadingState === 'DONE' ||
-        !routePath.includes('page-2')
-      ) {
-        return;
-      }
-
-      setAsyncComponentsLoadingState('LOADING');
-      import('../import-components-async').then(() =>
-        setAsyncComponentsLoadingState('DONE'),
-      );
-    }, [routePath, asyncComponentsLoadingState]);
+    const routePath = props.cqPath;
 
     if (!routePath) {
       return <WrappedComponent {...props} />;
@@ -60,15 +47,20 @@ export const withRoute = (WrappedComponent, extension) => {
     extension = extension || 'html';
 
     // Context path + route path + extension
-    return asyncComponentsLoadingState === 'LOADING' ? (
-      <h3>Loading...</h3>
-    ) : (
+    return (
       <Route
         key={routePath}
         exact
         path={'(.*)' + routePath + '(.' + extension + ')?'}
         render={(routeProps) => {
-          return <WrappedComponent {...props} {...routeProps} />;
+          // Load the chunk asynchronously if the path contains 'page-2'
+          return routePath.includes('page-2') ? (
+            <AsyncLoader>
+              <WrappedComponent {...props} {...routeProps} />
+            </AsyncLoader>
+          ) : (
+            <WrappedComponent {...props} {...routeProps} />
+          );
         }}
       />
     );

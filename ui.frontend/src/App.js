@@ -4,6 +4,7 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 import { theme } from 'styled-tools';
 import { theme as appTheme } from './styles/variables';
+import { CQContextProvider } from './lib/cqContext';
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -28,13 +29,15 @@ const GlobalStyle = createGlobalStyle`
 class App extends Page {
   render() {
     return (
-      <ThemeProvider theme={appTheme}>
-        <GlobalStyle />
-        <div>
-          {this.childComponents}
-          {this.childPages}
-        </div>
-      </ThemeProvider>
+      <CQContextProvider>
+        <ThemeProvider theme={appTheme}>
+          <GlobalStyle />
+          <div>
+            {this.childComponents}
+            {this.childPages}
+          </div>
+        </ThemeProvider>
+      </CQContextProvider>
     );
   }
 }

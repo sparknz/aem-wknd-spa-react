@@ -1,8 +1,13 @@
 import React, { useContext } from 'react';
+import { EditorContext } from '@adobe/cq-react-editable-components';
 
 const CQContext = React.createContext();
 
 function getCookieValueByRegEx(name) {
+  if (typeof document === 'undefined') {
+    return undefined;
+  }
+
   const matches = document.cookie.match(
     '(^|;)\\s*' + name + '\\s*=\\s*([^;]+)',
   );
@@ -10,8 +15,10 @@ function getCookieValueByRegEx(name) {
 }
 
 export function CQContextProvider({ children }) {
+  const isInEditor = React.useContext(EditorContext);
+
   const context = {
-    isInEditor: getCookieValueByRegEx('wcmmode') === 'edit',
+    isInEditor: isInEditor || getCookieValueByRegEx('wcmmode') === 'edit',
   };
 
   return <CQContext.Provider value={context}>{children}</CQContext.Provider>;

@@ -25,22 +25,20 @@ import { Constants, ModelManager } from '@adobe/cq-spa-page-model-manager';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import Loadable from 'react-loadable';
 import App from './App';
 import './components/import-components';
-import { CQContextProvider } from './lib/cqContext';
 
 function render(pageModel, useHydrate) {
   ReactDOM[useHydrate ? 'hydrate' : 'render'](
     <BrowserRouter>
-      <CQContextProvider>
-        <App
-          cqChildren={pageModel[Constants.CHILDREN_PROP]}
-          cqItems={pageModel[Constants.ITEMS_PROP]}
-          cqItemsOrder={pageModel[Constants.ITEMS_ORDER_PROP]}
-          cqPath={pageModel[Constants.PATH_PROP]}
-          locationPathname={window.location.pathname}
-        />
-      </CQContextProvider>
+      <App
+        cqChildren={pageModel[Constants.CHILDREN_PROP]}
+        cqItems={pageModel[Constants.ITEMS_PROP]}
+        cqItemsOrder={pageModel[Constants.ITEMS_ORDER_PROP]}
+        cqPath={pageModel[Constants.PATH_PROP]}
+        locationPathname={window.location.pathname}
+      />
     </BrowserRouter>,
     document.getElementById('spa-root'),
   );
@@ -55,11 +53,20 @@ document.addEventListener('DOMContentLoaded', () => {
     jsonScript.remove();
   }
 
+  const styles = document.querySelector("[data-styled='true']");
+  if (styles) {
+    // Remove pre-rendered styles.
+    styles.remove();
+  }
+
   const initialModel = initialState ? initialState.rootModel : undefined;
 
-  ModelManager.initialize({
-    model: initialModel,
-  }).then((model) => {
+  Promise.all([
+    ModelManager.initialize({
+      model: initialModel,
+    }),
+    Loadable.preloadReady(),
+  ]).then(([model]) => {
     render(model, !!initialModel);
   });
 });
